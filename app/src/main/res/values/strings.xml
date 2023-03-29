@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">ShopHiltCleanNav</string>
+    <string name="common_next">Next</string>
+    <string name="common_close">Close</string>
+    <string name="common_ok">OK</string>
+    <string name="common_share">Share</string>
+    <string name="common_warning">Warning</string>
+    <string name="common_error">Error</string>
+    <string name="common_cancel">Cancel</string>
+    <string name="common_success">Success</string>
+    <string name="common_yes">Yes</string>
+    <string name="common_no">No</string>
+
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+</resources>

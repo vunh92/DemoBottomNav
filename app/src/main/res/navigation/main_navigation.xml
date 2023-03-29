@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_navigation"
+    app:startDestination="@+id/navigation_home">
+
+    <fragment
+        android:id="@+id/navigation_home"
+        android:name="com.vunh.demobottomnav.presentation.home.HomeFragment"
+        android:label="@string/title_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_navigation_home_to_destinationFragment"
+            app:destination="@id/destination_fragment" />
+        <argument
+            android:name="nameToShow"
+            android:defaultValue="Andy"
+            app:argType="string" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_dashboard"
+        android:name="com.vunh.demobottomnav.presentation.dashboard.DashboardFragment"
+        android:label="@string/title_dashboard"
+        tools:layout="@layout/fragment_dashboard" >
+        <action
+            android:id="@+id/action_navigation_dashboard_to_dashboard_detail_fragment"
+            app:destination="@id/dashboard_detail_fragment" >
+            <argument
+                android:name="nameToShow"
+                android:defaultValue="Andy"
+                app:argType="string" />
+        </action>
+        <action
+            android:id="@+id/action_navigation_dashboard_to_destination_fragment"
+            app:destination="@id/destination_fragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_notifications"
+        android:name="com.vunh.demobottomnav.presentation.notifications.NotificationsFragment"
+        android:label="@string/title_notifications"
+        tools:layout="@layout/fragment_notifications" >
+        <action
+            android:id="@+id/action_navigation_notifications_to_destination_fragment"
+            app:destination="@id/destination_fragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/destination_fragment"
+        android:name="com.vunh.demobottomnav.presentation.destination.DestinationFragment"
+        android:label="fragment_destination"
+        tools:layout="@layout/fragment_destination" >
+        <action
+            android:id="@+id/action_destination_fragment_to_destination_second_fragment"
+            app:destination="@id/destination_second_fragment" >
+            <argument
+                android:name="nameToDest2"
+                android:defaultValue="Andy2"
+                app:argType="string" />
+        </action>
+    </fragment>
+
+    <fragment
+        android:id="@+id/destination_second_fragment"
+        android:name="com.vunh.demobottomnav.presentation.destination.DestinationSecondFragment"
+        android:label="fragment_destination_second"
+        tools:layout="@layout/fragment_destination_second" >
+        <action
+            android:id="@+id/action_destination_second_fragment_to_navigation_home"
+            app:destination="@id/navigation_home"
+            app:launchSingleTop="true"
+            app:popUpTo="@+id/main_navigation"
+            app:popUpToInclusive="true"/>
+        <argument
+            android:name="nameToHome"
+            android:defaultValue="Andy To home"
+            app:argType="string" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/dashboard_detail_fragment"
+        android:name="com.vunh.demobottomnav.presentation.dashboard.detail.DashboardDetailFragment"
+        android:label="fragment_dashboard_detail"
+        tools:layout="@layout/fragment_dashboard_detail" />
+
+</navigation>
